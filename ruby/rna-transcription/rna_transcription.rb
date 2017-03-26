@@ -11,15 +11,9 @@ class Complement
     A: :U
   }.freeze
   def self.of_dna(sequence)
-    output = ''
-    sequence.split('').each do |char|
-      begin
-        complement = COMPLEMENTS.fetch(char.to_sym)
-      rescue
-        return ''
-      end
-      output << complement.to_s
+    sequence.chars.reduce('') do |memo, char|
+      return '' unless COMPLEMENTS.key?(char.to_sym)
+      memo + COMPLEMENTS.fetch(char.to_sym).to_s
     end
-    output
   end
 end

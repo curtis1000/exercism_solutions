@@ -5,7 +5,6 @@ require_relative 'rna_transcription'
 
 # Test data version:
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
-
 class ComplementTest < Minitest::Test
   def test_rna_complement_of_cytosine_is_guanine
     assert_equal 'G', Complement.of_dna('C')
