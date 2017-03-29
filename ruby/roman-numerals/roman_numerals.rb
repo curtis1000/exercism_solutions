@@ -8,14 +8,6 @@ class Integer
     5 => 'V'
   }.freeze
   def to_roman
-    n = to_i
-    return '' unless ROMAN.key?(n)
-    ROMAN.fetch(n)
-
-    output = ''
-
-    output << 'IX' if (n % 10) == 9
-
-
+    # https://github.com/freeCodeCamp/freeCodeCamp/wiki/Algorithm-Roman-Numeral-Converter
   end
 end
